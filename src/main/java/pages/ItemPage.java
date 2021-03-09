@@ -82,7 +82,7 @@ public class ItemPage extends BasePage {
         saleprice.sendKeys(sale);
     }
     public void setSalesLink() {
-        itembtn.click();
+        sales.click();
     }
 
     public void homepage(String a, String b, String name, String sale) {

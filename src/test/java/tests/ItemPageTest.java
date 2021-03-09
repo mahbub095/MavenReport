@@ -28,14 +28,14 @@ public class ItemPageTest {
 
     }
 
-    @Test(priority = 1)
+   /* @Test(priority = 1)
     public void verifyLoginTest() {
         loginPage = new LoginPage(driver);
         loginPage.loginpage("admin", "admin@1234");
         System.out.println("Login Success");
-    }
+    }*/
 
-    @Test(priority = 2)
+    @Test
     public void verifyAddItem() {
         loginPage = new LoginPage(driver);
         loginPage.loginpage("admin", "admin@1234");
@@ -43,12 +43,10 @@ public class ItemPageTest {
         itempage.homepage("a", "b", "Bag", "100");
         System.out.println("Item Added");
     }
-    @Test(priority = 3)
+    @Test
     public void verifyContactsLinkTest(){
-        loginPage = new LoginPage(driver);
-        itempage = new ItemPage(driver);
         itempage.navigateToContactsPage();
-        System.out.println("Link Not Working");
+        System.out.println("Sales Link Working");
     }
 /*
     @AfterMethod
