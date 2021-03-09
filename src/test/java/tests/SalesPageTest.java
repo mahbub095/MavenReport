@@ -6,21 +6,20 @@ import Base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.ContactsPage;
+import pages.SalesPage;
 import pages.ItemPage;
 import pages.LoginPage;
 
 
-public class ContactsPageTest {
+public class SalesPageTest {
 
 	public BasePage basePage;
 	public WebDriver driver;
 	public Properties prop;
 	public LoginPage loginPage;
 	public ItemPage homePage;
-	public ContactsPage contactsPage;
+	public SalesPage contactsPage;
 
 	@BeforeMethod // this method will be executed before every @test method
 	public void setUp() {

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 
-public class ContactsPage extends BasePage {
+public class SalesPage extends BasePage {
 	
 	@FindBy(xpath = "//span[text()='Create contact']")
 	WebElement createContactBtn;
@@ -33,7 +33,7 @@ public class ContactsPage extends BasePage {
 	
 	
 	
-	public ContactsPage(WebDriver driver){
+	public SalesPage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

@@ -1,14 +1,10 @@
 package pages;
 
 import Base.BasePage;
-import com.sun.org.glassfish.gmbal.Description;
-import constants.Constants;
-import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -38,6 +34,9 @@ public class ItemPage extends BasePage {
 
     @FindBy(id = "submit")
     WebElement submitbtn;
+
+    @FindBy(linkText = "Sales")
+    WebElement sales;
 
     //Constructor
     public ItemPage(WebDriver driver) {
@@ -82,7 +81,9 @@ public class ItemPage extends BasePage {
     public void setPrice(String sale) {
         saleprice.sendKeys(sale);
     }
-
+    public void setSalesLink() {
+        itembtn.click();
+    }
 
     public void homepage(String a, String b, String name, String sale) {
 
@@ -94,16 +95,13 @@ public class ItemPage extends BasePage {
         this.setNameitem(name);
         this.setPrice(sale);
         this.setSubmit();
+        this.setSalesLink();
 
     }
-    public ContactsPage navigateToContactsPage(){
+    public SalesPage navigateToContactsPage(){
         WebDriverWait wait = new WebDriverWait(driver, 20);
-     //   wait.until(ExpectedConditions.visibilityOf(contactsTab));
-       // contactsTab.click();
-        //TestUtil.shortWait();
-      //  contactsLink.click();
-
-        return new ContactsPage(driver);
+        sales.click();
+        return new SalesPage(driver);
 
     }
 }

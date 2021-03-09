@@ -12,7 +12,7 @@
 		<classes>
 			<class name="tests.LoginTest" />
 			<class name="tests.ItemPageTest" />
-<!-- 			<class name="com.qa.hubspot.tests.ContactsPageTest" />
+<!-- 			<class name="com.qa.hubspot.tests.SalesPageTest" />
  -->		</classes>
 	</test>
 </suite>

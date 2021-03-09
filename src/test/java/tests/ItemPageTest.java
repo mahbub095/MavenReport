@@ -16,7 +16,7 @@ public class ItemPageTest {
     public WebDriver driver;
     public Properties prop;
     public LoginPage loginPage;
-    public ItemPage homepage;
+    public ItemPage itempage;
 
 
     @BeforeMethod
@@ -39,13 +39,20 @@ public class ItemPageTest {
     public void verifyAddItem() {
         loginPage = new LoginPage(driver);
         loginPage.loginpage("admin", "admin@1234");
-        homepage = new ItemPage(driver);
-        homepage.homepage("a", "b", "Bag", "100");
+        itempage = new ItemPage(driver);
+        itempage.homepage("a", "b", "Bag", "100");
         System.out.println("Item Added");
     }
-
+    @Test(priority = 3)
+    public void verifyContactsLinkTest(){
+        loginPage = new LoginPage(driver);
+        itempage = new ItemPage(driver);
+        itempage.navigateToContactsPage();
+        System.out.println("Link Not Working");
+    }
+/*
     @AfterMethod
     public void tearDown() {
         driver.quit();
-    }
+    }*/
 }
