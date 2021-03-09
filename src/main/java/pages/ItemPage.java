@@ -96,6 +96,16 @@ public class ItemPage extends BasePage {
         this.setSubmit();
 
     }
+    public ContactsPage navigateToContactsPage(){
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+     //   wait.until(ExpectedConditions.visibilityOf(contactsTab));
+       // contactsTab.click();
+        //TestUtil.shortWait();
+      //  contactsLink.click();
+
+        return new ContactsPage(driver);
+
+    }
 }
 	
 	
