@@ -6,20 +6,20 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.HomePage;
+import pages.ItemPage;
 import pages.LoginPage;
 import java.util.Properties;
 
-public class HomePageTest {
+public class ItemPageTest {
 
     public BasePage basePage;
     public WebDriver driver;
     public Properties prop;
     public LoginPage loginPage;
-    public HomePage homepage;
+    public ItemPage homepage;
 
 
-    @BeforeMethod //this method will be executed before every @test method
+    @BeforeMethod
     public void setUp() {
         basePage = new BasePage();
         prop = basePage.initialize_Properties();
@@ -32,17 +32,19 @@ public class HomePageTest {
     public void verifyLoginTest() {
         loginPage = new LoginPage(driver);
         loginPage.loginpage("admin", "admin@1234");
+        System.out.println("Login Success");
     }
 
     @Test(priority = 2)
     public void verifyAddItem() {
         loginPage = new LoginPage(driver);
         loginPage.loginpage("admin", "admin@1234");
-        homepage = new HomePage(driver);
+        homepage = new ItemPage(driver);
         homepage.homepage("a", "b", "Bag", "100");
+        System.out.println("Item Added");
     }
 
-    @AfterMethod //--this method will be executed after every test method
+    @AfterMethod
     public void tearDown() {
         driver.quit();
     }

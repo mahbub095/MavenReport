@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class HomePage extends BasePage {
+public class ItemPage extends BasePage {
 
 
     @FindBy(id = "title")
@@ -40,11 +40,15 @@ public class HomePage extends BasePage {
     WebElement submitbtn;
 
     //Constructor
-    public HomePage(WebDriver driver) {
+    public ItemPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
+  /*  public String getHomePageTitle(){
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.titleContains(Constants.HOME_PAGE_TITLE));
+        return driver.getTitle();
+    }*/
     public void setUserName(String a) {
         title.sendKeys(a);
 
