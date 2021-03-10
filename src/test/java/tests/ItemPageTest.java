@@ -42,12 +42,14 @@ public class ItemPageTest {
         itempage = new ItemPage(driver);
         itempage.homepage("a", "b", "Bag", "100");
         System.out.println("Item Added");
-    }
-    @Test
-    public void verifyContactsLinkTest(){
         itempage.navigateToContactsPage();
         System.out.println("Sales Link Working");
     }
+  /*  @Test
+    public void verifyContactsLinkTest(){
+        itempage.navigateToContactsPage();
+        System.out.println("Sales Link Working");
+    }*/
 /*
     @AfterMethod
     public void tearDown() {

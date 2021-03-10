@@ -5,61 +5,107 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-
 
 
 public class SalesPage extends BasePage {
-	
-	@FindBy(xpath = "//span[text()='Create contact']")
-	WebElement createContactBtn;
-	
-	@FindBy(xpath = "//li//span[text()='Create contact']")
-	WebElement createContactSecondBtn;
-	
-	@FindBy(id = "uid-ctrl-1")
-	WebElement email;
-	
-	@FindBy(id = "uid-ctrl-2")
-	WebElement firstName;
-	
-	@FindBy(id = "uid-ctrl-3")
-	WebElement lastName;
-	
-	@FindBy(id = "uid-ctrl-5")
-	WebElement jobTitle;
-	
-	
-	
-	public SalesPage(WebDriver driver){
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
-	
-	public void createNewContact(String emailVal, String firstname, String lastname, String jobtitle ){
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		
-		wait.until(ExpectedConditions.elementToBeClickable(createContactBtn));
-		createContactBtn.click();
-		
-		wait.until(ExpectedConditions.elementToBeClickable(email));
-		email.sendKeys(emailVal);
-		
-		wait.until(ExpectedConditions.elementToBeClickable(firstName));
-		firstName.sendKeys(firstname);
-		
-		wait.until(ExpectedConditions.elementToBeClickable(lastName));
-		lastName.sendKeys(lastname);
-		
-		wait.until(ExpectedConditions.elementToBeClickable(jobTitle));
-		jobTitle.sendKeys(jobtitle);
-		
-		wait.until(ExpectedConditions.elementToBeClickable(createContactSecondBtn));
-		createContactSecondBtn.click();
-		
-	}
-	
+
+    @FindBy(linkText = "Add New")
+    WebElement addrevene;
+
+    @FindBy(id = "payment_date")
+    WebElement payment;
+
+    @FindBy(linkText = "10")
+    WebElement tendate;
+
+    @FindBy(id = "description")
+    WebElement descr;
+
+    @FindBy(id = "select2-account_id-1-container")
+    WebElement selectacc;
+
+    @FindBy(xpath = "//li[contains(text(),'Cash (USD)')]")
+    WebElement link;
+
+    @FindBy(xpath = "//span[@id='select2-category_id-3-container']")
+    WebElement cat;
+
+    @FindBy(xpath = "//li[contains(text(),'Sales')]")
+    WebElement sales;
+    @FindBy(id = "submit")
+    WebElement sub;
+
+    public void setLink() {
+        addrevene.click();
+    }
+
+    public void setDate() {
+        payment.click();
+    }
+
+    public void setTendate() {
+        tendate.click();
+    }
+
+    public void setDes(String des) {
+        descr.sendKeys(des);
+    }
+
+    public void setACC() {
+        selectacc.click();
+    }
+
+    public void setACC2() {
+        link.click();
+    }
+
+    public void setCat() {
+        cat.click();
+    }
+
+    public void setCat2() {
+        sales.click();
+    }
+
+    public void submit() {
+        sub.click();
+    }
+
+
+    public SalesPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    public void createNewRevene(String desc) {
+
+
+       /* WebDriverWait wait = new WebDriverWait(driver, 10);
+
+        wait.until(ExpectedConditions.elementToBeClickable(addrevene));
+        addrevene.click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(payment));
+        payment.click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(tendate));
+        tendate.click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(descr));
+        descr.sendKeys(desc);*/
+
+        this.setLink();
+        this.setDate();
+        this.setTendate();
+        this.setACC();
+        this.setACC2();
+        this.setCat();
+        this.setCat2();
+        this.setDes(desc);
+        this.submit();
+
+
+    }
+
 
 }

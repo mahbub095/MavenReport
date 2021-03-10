@@ -14,23 +14,23 @@ import pages.LoginPage;
 
 public class SalesPageTest {
 
-	public BasePage basePage;
-	public WebDriver driver;
-	public Properties prop;
-	public LoginPage loginPage;
-	public ItemPage homePage;
-	public SalesPage contactsPage;
+    public BasePage basePage;
+    public WebDriver driver;
+    public Properties prop;
+    public LoginPage loginPage;
+    public ItemPage itempage;
+    public SalesPage salesPage;
 
-	@BeforeMethod // this method will be executed before every @test method
-	public void setUp() {
-		basePage = new BasePage();
-		prop = basePage.initialize_Properties();
-		driver = basePage.initialize_driver();
-		driver.get(prop.getProperty("url"));
-		loginPage = new LoginPage(driver);
-		//homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-		contactsPage = homePage.navigateToContactsPage();
-	}
+    @BeforeMethod // this method will be executed before every @test method
+    public void setUp() {
+        basePage = new BasePage();
+        prop = basePage.initialize_Properties();
+        driver = basePage.initialize_driver();
+        driver.get(prop.getProperty("url"));
+        loginPage = new LoginPage(driver);
+        //homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+        //	addRevene = homePage.navigateToContactsPage();
+    }
 
 /*	@DataProvider(name = "getContactsTestData")
 	public Object[][] getContactsTestData() {
@@ -40,15 +40,25 @@ public class SalesPageTest {
 	
 	*/
 
-	@Test(dataProvider = "getContactsTestData")
-	public void createNewContactTest(String email, String firstName, String lastName, String jobTitle) {
-		contactsPage.createNewContact(email, firstName, lastName, jobTitle);
-		
-	}
+    @Test/*(dataProvider = "getContactsTestData")*/
+    public void createNewContactTest() {
 
-	@AfterMethod // --this method will be executed after every test method
-	public void tearDown() {
-		driver.quit();
-	}
+        loginPage = new LoginPage(driver);
+        loginPage.loginpage("admin", "admin@1234");
+
+        itempage = new ItemPage(driver);
+        itempage.homepage("a", "b", "Bag", "100");
+        System.out.println("Item Added");
+        itempage.navigateToContactsPage();
+
+        salesPage = new SalesPage(driver);
+        System.out.println("Sales Link Working");
+        salesPage.createNewRevene("A");
+    }
+
+    /*@AfterMethod // --this method will be executed after every test method
+    public void tearDown() {
+        driver.quit();
+    }*/
 
 }
