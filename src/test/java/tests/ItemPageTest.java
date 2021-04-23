@@ -35,21 +35,21 @@ public class ItemPageTest {
         System.out.println("Login Success");
     }*/
 
-    @Test
+    @Test( description = "Check login")
     public void verifyAddItem() {
         loginPage = new LoginPage(driver);
-        loginPage.loginpage("admin", "admin@1234");
+        loginPage.loginpage("admin", "admin");
         itempage = new ItemPage(driver);
         itempage.homepage("a", "b", "Bag", "100");
         System.out.println("Item Added");
-        itempage.navigateToContactsPage();
-        System.out.println("Sales Link Working");
+        /*itempage.navigateToContactsPage();
+        System.out.println("Sales Link Working");*/
     }
-  /*  @Test
+    @Test (description = "Go to Contact link" )
     public void verifyContactsLinkTest(){
         itempage.navigateToContactsPage();
         System.out.println("Sales Link Working");
-    }*/
+    }
 /*
     @AfterMethod
     public void tearDown() {

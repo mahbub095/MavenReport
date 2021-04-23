@@ -22,7 +22,7 @@ public class BasePage {
     public WebDriver initialize_driver() {
 
 
-        System.setProperty("webdriver.chrome.driver", "C:\\c\\c\\c\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\c\\899\\chromedriver.exe");
         driver = new ChromeDriver();
         tdriver.set(driver);
         driver.manage().deleteAllCookies();
@@ -39,7 +39,7 @@ public class BasePage {
     public Properties initialize_Properties() {
         prop = new Properties();
         try {
-            FileInputStream ip = new FileInputStream("C:\\Users\\User\\Documents\\Automation New Test\\Maven Final\\"
+            FileInputStream ip = new FileInputStream("G:\\MavenReport\\"
                     + "src/main/java/config/config.properties");
             prop.load(ip);
         } catch (FileNotFoundException e) {

@@ -15,7 +15,7 @@ public class SalesPage extends BasePage {
     @FindBy(id = "payment_date")
     WebElement payment;
 
-    @FindBy(linkText = "10")
+    @FindBy(linkText = "23")
     WebElement tendate;
 
     @FindBy(id = "description")
@@ -32,7 +32,7 @@ public class SalesPage extends BasePage {
 
     @FindBy(xpath = "//li[contains(text(),'Sales')]")
     WebElement sales;
-    @FindBy(id = "submit")
+    @FindBy(xpath = "//input[@id='submit']")
     WebElement sub;
 
     public void setLink() {
@@ -67,10 +67,9 @@ public class SalesPage extends BasePage {
         sales.click();
     }
 
-    public void submit() {
+/*    public void submit() {
         sub.click();
-    }
-
+    }*/
 
     public SalesPage(WebDriver driver) {
         this.driver = driver;
@@ -80,29 +79,23 @@ public class SalesPage extends BasePage {
     public void createNewRevene(String desc) {
 
 
-       /* WebDriverWait wait = new WebDriverWait(driver, 10);
 
-        wait.until(ExpectedConditions.elementToBeClickable(addrevene));
-        addrevene.click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(payment));
-        payment.click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(tendate));
-        tendate.click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(descr));
-        descr.sendKeys(desc);*/
 
         this.setLink();
         this.setDate();
         this.setTendate();
-        this.setACC();
-        this.setACC2();
+//        this.setACC();
+//        this.setACC2();
+
         this.setCat();
         this.setCat2();
         this.setDes(desc);
-        this.submit();
+
+        this.setACC();
+        this.setACC2();
+
+
+       /// this.submit();
 
 
     }

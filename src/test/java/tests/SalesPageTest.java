@@ -21,7 +21,7 @@ public class SalesPageTest {
     public ItemPage itempage;
     public SalesPage salesPage;
 
-    @BeforeMethod // this method will be executed before every @test method
+    @BeforeMethod
     public void setUp() {
         basePage = new BasePage();
         prop = basePage.initialize_Properties();
@@ -44,10 +44,10 @@ public class SalesPageTest {
     public void createNewContactTest() {
 
         loginPage = new LoginPage(driver);
-        loginPage.loginpage("admin", "admin@1234");
+        loginPage.loginpage("admin", "admin");
 
         itempage = new ItemPage(driver);
-        itempage.homepage("a", "b", "Bag", "100");
+        itempage.homepage("a", "b", "Ball", "10");
         System.out.println("Item Added");
         itempage.navigateToContactsPage();
 
