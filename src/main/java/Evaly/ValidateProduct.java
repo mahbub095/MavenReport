@@ -31,8 +31,8 @@ public class ValidateProduct {
         }
 
         driver.findElement(By.xpath("//body/div[@id='__next']/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/button[1]/span[1]/span[1]")).click();
-        driver.findElement(By.xpath("//body/div[@id='custom-popover']/div[1]/div[1]/div[1]/form[1]/div[1]/label[1]/input[1]")).sendKeys("01744682915");
-        driver.findElement(By.xpath("//body/div[@id='custom-popover']/div[1]/div[1]/div[1]/form[1]/div[2]/label[1]/input[1]")).sendKeys("Mahbub@1234");
+        driver.findElement(By.xpath("//body/div[@id='custom-popover']/div[1]/div[1]/div[1]/form[1]/div[1]/label[1]/input[1]")).sendKeys("0XXXXX");
+        driver.findElement(By.xpath("//body/div[@id='custom-popover']/div[1]/div[1]/div[1]/form[1]/div[2]/label[1]/input[1]")).sendKeys("XXXXXXXXX");
         driver.findElement(By.xpath("//body/div[@id='custom-popover']/div[1]/div[1]/div[1]/form[1]/div[3]/button[1]")).click();
 
 
