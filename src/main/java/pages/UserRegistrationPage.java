@@ -22,7 +22,8 @@ public class UserRegistrationPage extends PageBase {
     WebElement confirmPasswordTxtBox;
     @FindBy(id = "register-button")
     WebElement registerBtn;
-    @FindBy(css = "div.result")
+
+    @FindBy(name = "register-button")
     public WebElement registrationCompletedMessage;
 
     public UserRegistrationPage(WebDriver driver) {
