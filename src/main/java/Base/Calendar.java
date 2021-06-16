@@ -14,29 +14,15 @@ public class Calendar {
     public static void main(String[] args) {
 
 
-        System.setProperty("webdriver.chrome.driver", "C:\\c\\c\\c\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\c\\90\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-        driver.get("http://seleniumpractise.blogspot.com/2016/08/how-to-handle-calendar-in-selenium.html");
-        driver.findElement(By.id("datepicker")).click();
-        //driver.findElement(By.xpath("//a[text()='21']")).click();
-
-//		List<WebElement> dateList = driver.findElements(By.cssSelector("table.ui-datepicker-calendar a"));
-//		System.out.println(dateList.size());
-//		for(WebElement e : dateList) {
-//			String date = e.getText();
-//			System.out.println(date);
-//			if(date.equals("15")) {
-//				e.click();
-//				break;
-
-//			}
-//		}
-
-        //selectDate("17");
+        driver.get("https://opensource-demo.orangehrmlive.com/");
+        System.out.println("Title" + driver.getTitle());
+        driver.findElement(By.name("txtUsername")).click();
         By calendar = By.cssSelector("table.ui-datepicker-calendar a");
         selectDate("25", calendar);
     }
